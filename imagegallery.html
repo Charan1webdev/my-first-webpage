@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chachas Photograpy</title>
+	<link rel="stylesheet" href="gallery.css">
+	<meta charset="UTF-8">
+	<meta name="keywords" content="imagegallery, flowers, photography">
+	<meta name="author" content="charan">
+	<meta name="description" content="nature photography">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		.container{
+			width:80%;
+			margin:0 auto;
+			overflow:hidden;
+			margin-bottom:15px;
+		}
+		#mainHeader{
+			background-color:#27AE60;
+			color:#F4F6F7;
+			font-family:cursive, Georgia, serif;
+
+		}
+		#mainHeader h1{display:inline-block;}
+		#mainNav .container{overflow:visible;}
+		.logo{width:10%;display:inline-block;float:left;}
+		.logo img {width:100%;}
+		.navBar, .drpDown{
+			list-style:none;
+			margin:0px;
+			padding:0px;
+			background-color:#212F3D;
+			color:#F7F9F9;
+			border:1px solid #212F3D;
+			border-radius:5px;
+		}
+		.navBar li{display:inline-block;position:relative;}
+		.navBar li a{text-decoration:none;padding:10px 15px;display:inline-block;}
+		.navBar li a:hover{background-color:#F7F9F9;color:#212F3D;}
+		.drpDown{display:none;}
+		.navBar li:hover .drpDown{
+			display:block;
+			position:absolute;
+		}
+		#mainFooter{
+			background-color:#333;
+		}
+		/*.footerCnt{min-height:100px;line-height:100px;text-align:center;}
+		.footerCnt p{color:#fff;}this failed to workd because when the content grew more than one line it looked ugly in responsive*/
+		.footerCnt{text-align:center;position:relative;min-height:100px;}
+		.footerCnt p{top:50%;left:50%;position:absolute;color:#fff;transform:translate(-50%, -50%);margin:0px;}
+		.gallery{
+			float:left;
+			border:1px solid #333;
+			margin:5px;
+			width:180px;
+		}
+		.gallery img{
+			width:100%;
+		}
+		.desc{text-align:center;font-family:'Courier New', monospace;padding:5px;}
+		/*image sprite is collection of images put in to single image, this saves lot of time to load as multiple server requests to images can be saved*/
+		.contacts{display:inline-block;width:30%;float:right;}
+		.contacts p::before{
+			/*position:absolute;*/
+			content:" ";	
+			background:url('images/sprite1.png') no-repeat;	
+			float: left; 
+ 		    margin: 0 5px 2px 0;	
+		}
+		.contacts p.cam::before{
+			background-position: 0 -266px;
+			width: 24px;
+			height: 24px;
+		}
+		.contacts p.phone::before{
+			background-position:-1px -1px;
+			width: 24px;
+			height: 24px;
+		}
+		@media only screen and (max-width:768px){
+			body{margin:0px;}
+			#mainHeader h1{display:block;}	
+			.logo{width:100%;}
+			.contacts{width:100%;}
+			.navBar li{display:block;position:static;}
+			.navBar li:hover .drpDown{position:static;}
+			.container{width:91%;padding-left:15px;padding-right:15px;}
+			.gallery{width:calc(100% - 10px);height:calc(100% - 10px);}/*because the margin in gallery is making gallery div cross or spill over the outer div that is container div-hence this arrangement*/
+		}
+	</style>
+</head>
+<body>
+	<header id="mainHeader">
+		<div class="container">
+			
+			<h1>The Photographers world!</h1>
+			<div class="logo">
+				<img src="images/camera.png" alt="camera logo">
+			</div>
+			<div class="contacts">
+			  <p class="cam">Charan</p>
+			  <p class="phone">8970430304</p>
+			</div>
+		</div>
+	</header>
+	<nav id="mainNav">
+	<div class="container">
+			<ul class="navBar">
+				<li><a>Home</a></li>
+				<li><a>About me</a></li>
+				<li><a>Gallery</a>
+					<ul class="drpDown">
+						<li><a>Treeflowers</a></li>
+						<li><a>Nature</a></li>
+						<li><a>Other</a></li>
+					</ul></li>
+				<li><a>Achievements</a></li>
+				<li><a>Contact</a></li>
+			</ul>
+		</div>	
+	</nav>
+	<main>
+		<div class="wall container">
+			<div class="gallery">
+				<a>
+					<img src="images/FlowerTorch1.jpg" alt="flower torch">
+				</a>
+				<div class="desc">Flower Torch</div>
+			</div>
+			<div class="gallery">
+				<a>
+					<img src="images/OrangeLotus1.jpg" alt="orange lotus flower">
+				</a>
+				<div class="desc">Orange Lotus</div>
+			</div>
+			<div class="gallery">
+				<a>
+					<img src="images/TinyBlueFlower1.jpg" alt="tiny blue flower">
+				</a>
+				<div class="desc">TinyBlue Flower</div>
+			</div>
+			<div class="gallery">
+				<a>
+					<img src="images/TinyBlueFlower1.jpg" alt="tiny blue flower">
+				</a>
+				<div class="desc">TinyBlue Flower</div>
+			</div>
+			<div class="gallery">
+				<a>
+					<img src="images/OrangeLotus1.jpg" alt="orange lotus flower">
+				</a>
+				<div class="desc">Orange Lotus</div>
+			</div>
+			<div class="gallery">
+				<a>
+					<img src="images/Jan12YellowFlower1.jpg" alt="flower torch">
+				</a>
+				<div class="desc">Yellow Flower</div>
+			</div>
+		</div>
+	</main>
+	<footer id="mainFooter">
+		<div class="container">
+			<div class="footerCnt">
+				<p>All copy rights &copy are reserved to my phone and me.</p>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
